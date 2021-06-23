@@ -8,6 +8,10 @@ Built using ReactJs, Redux, TailwindCSS and Open Weather API
 
 ## Available Scripts
 
+Install all dependencies:
+
+### `npm install`
+
 In the project directory, you can run:
 
 ### `npm start`
