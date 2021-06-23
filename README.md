@@ -2,7 +2,7 @@
 
 Built using ReactJs, Redux, TailwindCSS and Open Weather API
 
-## Create .env file in root and add your Open Weather API key
+## Edit .env file in root and add your Open Weather API key
 
 `REACT_APP_OPENWEATHER_API_KEY =`
 
