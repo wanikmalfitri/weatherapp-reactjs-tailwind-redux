@@ -4,20 +4,20 @@ import { getCurrentWeather } from "../api/weather";
 import { toCelcius } from "../utils/temperature";
 
 const CityCard = ({ name, lat, lng }) => {
-  const coordinate = useState({
+  const coordinate = {
     latitude: lat,
     longitude: lng,
-  });
+  };
   const [currentWeather, setCurrentWeather] = useState(null);
 
   useEffect(() => {
-    const fetchCurrentWeather = async () => {
-      const weather = await getCurrentWeather(coordinate);
+    const fetchCurrentWeather = async (coord) => {
+      const weather = await getCurrentWeather(coord);
       if (weather) {
         setCurrentWeather(weather);
       }
     };
-    fetchCurrentWeather();
+    fetchCurrentWeather(coordinate);
   }, []);
 
   return (

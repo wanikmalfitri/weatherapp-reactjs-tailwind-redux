@@ -7,21 +7,21 @@ import { addSavedCities, removeSavedCities } from "../actions/citiesAction";
 
 const CityCardWithSaved = ({ name, lat, lng, isSaved, isDefault }) => {
   const dispatch = useDispatch();
-  const coordinate = useState({
+  const coordinate = {
     latitude: lat,
     longitude: lng,
-  });
+  };
   const [currentWeather, setCurrentWeather] = useState(null);
 
   useEffect(() => {
-    const fetchCurrentWeather = async () => {
+    const fetchCurrentWeather = async (coordinate) => {
       const weather = await getCurrentWeather(coordinate);
       if (weather) {
         setCurrentWeather(weather);
       }
     };
-    fetchCurrentWeather();
-  }, [coordinate]);
+    fetchCurrentWeather(coordinate);
+  }, []);
 
   return (
     <div className="col-span-1 flex">
